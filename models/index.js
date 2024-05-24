@@ -8,6 +8,7 @@ User.hasMany(Recipe, {
     foreignKey: 'userId', 
     as: 'recipes' 
 });
+
 Recipe.belongsTo(User, { 
     foreignKey: 'userId', 
     as: 'author' 
