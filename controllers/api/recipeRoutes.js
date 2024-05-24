@@ -29,9 +29,12 @@ router.post('/', async (req, res) => {
     try {
       const recipeData = await Recipe.create({
         title: req.body.title,
+        description: req.body.description,
         ingredients: req.body.ingredients,
         instructions: req.body.instructions,
-        user: req.body.user,
+        imageUrl: req.body.imageUrl,
+        allergens: req.body.allergens,
+        username: req.body.username,
       });
       res.status(200).json(recipeData);
     } catch (err) {
