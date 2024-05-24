@@ -4,7 +4,7 @@
       "description": "Three meatballs baked in marinara with mozzarella on top and a scoop of ricotta on the side.",
       "ingredients": [ "Ground Beef", "Mozzarella Cheese", "Marinara Sauce"],
       "instructions": "How to cook the dish.",
-      "allergens": "dairy",
-      "image": "image"
+      "imageUrl": "imageUrl",
+      "allergens": "dairy"
     }
 ]
