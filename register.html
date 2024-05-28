@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Login</title>
-
+    <title>Sign Up</title>
 </head>
 
 <body>
@@ -29,12 +28,19 @@
                                             Saver</h3>
                                     </div>
                                     <div class="mt-4 text-base text-gray-500">
-                                        <p>Login and get cooking now!</p>
+                                        <p>Sign up and get cooking now!</p>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="mt-6 space-y-2">
+                                <div>
+                                    <label for="username" class="sr-only">Username</label>
+                                    <input type="text" name="email" id="email"
+                                        class="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"
+                                        placeholder="Enter your username">
+                                </div>
+    
                                 <div>
                                     <label for="email" class="sr-only">Email</label>
                                     <input type="text" name="email" id="email"
@@ -49,10 +55,10 @@
                                 </div>
                                 <div class="flex flex-col mt-4 lg:space-y-2">
                                     <button type="button"
-                                        class="flex items-center justify-center w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Login</button>
+                                        class="flex items-center justify-center w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Create new account</button>
                                     <div class="flex justify-center">
-                                        <span class=" text-neutral-600 l eading-6">Don't have an account?
-                                            <a class="mx-auto mt-8 text-sm font-semibold text-blue-600 hover:text-neutral-600" title="sign-up" href="/register.html">Sign up</a>
+                                        <span class=" text-neutral-600 l eading-6">Already have an account?
+                                            <a class="mx-auto mt-8 text-sm font-semibold text-blue-600 hover:text-neutral-600" title="sign-up" href="/index.html">Login</a>
                                         </span>
                                     </div>
                                 </div>
