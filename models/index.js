@@ -14,16 +14,18 @@ Recipe.belongsTo(User, {
     as: 'author' 
 });
 
-User.hasMany(Favorite, { 
-    foreignKey: 'userId' 
-});
+User.hasMany(Favorite, {
+    foreignKey: 'userId',
+    onDelete: 'CASCADE'
+  });
 Favorite.belongsTo(User, { 
     foreignKey: 'userId' 
 });
 
-Recipe.hasMany(Favorite, { 
-    foreignKey: 'recipeId' 
-});
+Recipe.hasMany(Favorite, {
+    foreignKey: 'recipeId',
+    onDelete: 'CASCADE'
+  });
 Favorite.belongsTo(Recipe, { 
     foreignKey: 'recipeId' 
 });
