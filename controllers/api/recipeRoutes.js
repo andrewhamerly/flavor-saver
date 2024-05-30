@@ -1,5 +1,6 @@
 const router = express.Router();
 const { Recipe } = require('../../models');
+const withAuth = require('../../utils/auth.js');
 
 router.get('/', async (req, res) => {
     try {
@@ -25,7 +26,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
       const recipeData = await Recipe.create({
         title: req.body.title,
@@ -34,7 +35,7 @@ router.post('/', async (req, res) => {
         instructions: req.body.instructions,
         imageUrl: req.body.imageUrl,
         allergens: req.body.allergens,
-        username: req.body.username,
+        user_id: req.body.user_id,
       });
       res.status(200).json(recipeData);
     } catch (err) {
@@ -42,9 +43,21 @@ router.post('/', async (req, res) => {
     }
   });
 
-  router.put('/:id', async (req, res) => {
+  router.put('/:id', withAuth, async (req, res) => {
     try {
-        const [updated] = await Recipe.update(
+      const recipe = await Recipe.findByPk(req.params.id);
+
+      if (!recipe) {
+        res.status(404).json({ message: 'No recipe found with this id!'});
+        return;
+      }
+
+      if (recipe.user_id !== req.session.user_id) {
+        res.status(403).json({ message: 'You do not have permission to edit this recipe'});
+        return;
+      }
+
+        const updatedRecipe = await Recipe.update(
           {
             title: req.body.title,
             description: req.body.description,
@@ -52,40 +65,42 @@ router.post('/', async (req, res) => {
             instructions: req.body.instructions,
             imageUrl: req.body.imageUrl,
             allergens: req.body.allergens,
-            username: req.body.username,
           },
           {
             where: { id: req.params.id },
           }
         );
-
-        if (updated) {
-          const updatedRecipe = await Recipe.findByPk(req.params.id);
+         
           res.status(200).json(updatedRecipe);
-      } else {
-          res.status(404).json({ message: 'No recipe found with this id!' });
-      }
   } catch (err) {
       console.error(err);
       res.status(400).json(err);
     }
   });
 
-  router.delete('/:id', async (req, res) => {
+  router.delete('/:id', withAuth, async (req, res) => {
     try {
-      const recipeData = await Recipe.destroy({
+      const recipe = await Recipe.findByPk(req.params.id);
+
+      if (!recipe) {
+        res.status(404).json({ message: 'No recipe found with this id!' });
+        return;
+      }
+
+      if (recipe.user_id !== req.session.user_id) {
+        res.status(403).json({ message: 'You do not have permission to delete this recipe'});
+        return;
+      }
+      
+      await Recipe.destroy({
         where: {
           id: req.params.id
         }
       });
   
-      if (!recipeData) {
-        res.status(404).json({ message: 'No recipe found with this id!' });
-        return;
-      }
-  
-      res.status(200).json(recipeData);
+      res.status(200).json();
     } catch (err) {
+      console.error(err);
       res.status(400).json(err);
     }
   });
