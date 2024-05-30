@@ -3,6 +3,7 @@ const Recipe = require('./recipe');
 const Favorite = require('./favorite');
 const Like = require('./like');
 const Allergen = require('./allergen');
+const RecipeAllergen = require('./recipeAllergen');
 
 User.hasMany(Recipe, { 
     foreignKey: 'userId', 
@@ -45,12 +46,12 @@ Like.belongsTo(Recipe, {
 });
 
 Recipe.belongsToMany(Allergen, { 
-    through: 'RecipeAllergens', 
+    through: 'RecipeAllergen', 
     foreignKey: 'recipeId' 
 });
 Allergen.belongsToMany(Recipe, { 
-    through: 'RecipeAllergens', 
+    through: 'RecipeAllergen', 
     foreignKey: 'allergenId' 
 });
 
-module.exports = { User, Recipe, Favorite, Like, Allergen };
+module.exports = { User, Recipe, Favorite, Like, Allergen, RecipeAllergen };
