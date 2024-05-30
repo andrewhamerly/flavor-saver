@@ -1,5 +1,6 @@
 const router = express.Router();
 const {User} = require('../../models');
+const withAuth = require('../../utils/auth')
 
 router.post('/signup', async (req, res) => {
     try {
@@ -56,4 +57,72 @@ router.post('/login', async (req, res) => {
       res.status(404).end();
     }
   });
-  
+
+  router.get('/:id', async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.params.id);
+        if (!userData) {
+          res.status(404).json({ message: 'No user found with this id!'});
+          return;
+        }
+        res.status(200).json(userData);
+    } catch (err) {
+      console.error(err);
+      res.status(400).json(err);
+    }
+  });
+
+  router.put('/:id', withAuth, async (req, res) => {
+    try {
+        if (req.session.user_id !== req.params.id) {
+            res.status(403).json({ message: 'You do not have permission to update this user' });
+            return;
+        }
+
+        const userData = await User.update(req.body, {
+            where: {
+                id: req.params.id,
+            },
+            individualHooks: true, // Ensure hooks are run, e.g., password hashing
+        });
+
+        if (!userData[0]) {
+            res.status(404).json({ message: 'No user found with this id!' });
+            return;
+        }
+
+        res.status(200).json({ message: 'User updated successfully' });
+    } catch (err) {
+        console.error(err);
+        res.status(400).json(err);
+    }
+});
+
+router.delete('/:id', withAuth, async (req, res) => {
+  try {
+      if (req.session.user_id !== req.params.id) {
+          res.status(403).json({ message: 'You do not have permission to delete this user' });
+          return;
+      }
+
+      const userData = await User.destroy({
+          where: {
+              id: req.params.id,
+          },
+      });
+
+      if (!userData) {
+          res.status(404).json({ message: 'No user found with this id!' });
+          return;
+      }
+
+      req.session.destroy(() => {
+          res.status(204).end();
+      });
+  } catch (err) {
+      console.error(err);
+      res.status(400).json(err);
+  }
+});
+
+  module.exports = router;
