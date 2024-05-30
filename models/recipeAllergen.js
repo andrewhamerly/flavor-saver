@@ -21,6 +21,7 @@ RecipeAllergen.init({
 }, {
   sequelize,
   modelName: 'RecipeAllergen',
+  tableName: 'RecipeAllergens',
   timestamps: false
 });
 

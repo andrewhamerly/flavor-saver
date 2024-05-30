@@ -34,17 +34,18 @@ Recipe.init({
     type: DataTypes.STRING,
     allowNull: true
   },
-  user_id: {
+  users_id: {
     type: DataTypes.INTEGER,
     references: {
-      model: 'user',
+      model: 'Users',
       key: 'id',
     },
   }
 }, 
 { 
-    sequelize, 
-    modelName: 'Recipe' 
+  sequelize, 
+  modelName: 'Recipe',
+  tableName: 'Recipes'
 });
 
 module.exports = Recipe;

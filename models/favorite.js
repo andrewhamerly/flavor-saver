@@ -1,4 +1,4 @@
-const { Model } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Favorite extends Model {}
@@ -8,7 +8,7 @@ Favorite.init({
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'User',
+        model: 'Users',
         key: 'id'
       }
     },
@@ -16,13 +16,14 @@ Favorite.init({
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'Recipe',
+        model: 'Recipes',
         key: 'id'
       }
     }
   }, {
     sequelize,
     modelName: 'Favorite',
+    tableName: 'Favorites',
     indexes: [
       {
         unique: true,
