@@ -7,12 +7,12 @@ const RecipeAllergen = require('./recipeAllergen');
 
 User.hasMany(Recipe, { 
     foreignKey: 'userId', 
-    as: 'recipes' 
+    as: 'recipes'
 });
 
 Recipe.belongsTo(User, { 
     foreignKey: 'userId', 
-    as: 'author' 
+    as: 'author'
 });
 
 User.hasMany(Favorite, {
@@ -20,7 +20,7 @@ User.hasMany(Favorite, {
     onDelete: 'CASCADE'
   });
 Favorite.belongsTo(User, { 
-    foreignKey: 'userId' 
+    foreignKey: 'userId'
 });
 
 Recipe.hasMany(Favorite, {
@@ -28,21 +28,21 @@ Recipe.hasMany(Favorite, {
     onDelete: 'CASCADE'
   });
 Favorite.belongsTo(Recipe, { 
-    foreignKey: 'recipeId' 
+    foreignKey: 'recipeId'
 });
 
 User.hasMany(Like, { 
-    foreignKey: 'userId' 
+    foreignKey: 'userId'
 });
 Like.belongsTo(User, { 
-    foreignKey: 'userId' 
+    foreignKey: 'userId'
 });
 
 Recipe.hasMany(Like, { 
-    foreignKey: 'recipeId' 
+    foreignKey: 'recipeId'
 });
 Like.belongsTo(Recipe, { 
-    foreignKey: 'recipeId' 
+    foreignKey: 'recipeId'
 });
 
 Recipe.belongsToMany(Allergen, { 
