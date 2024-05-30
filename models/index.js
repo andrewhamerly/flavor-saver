@@ -4,6 +4,7 @@ const Favorite = require('./favorite');
 const Like = require('./like');
 const Allergen = require('./allergen');
 const RecipeAllergen = require('./recipeAllergen');
+const Ingredient = require('./ingredient');
 
 User.hasMany(Recipe, { 
     foreignKey: 'userId', 
@@ -54,4 +55,13 @@ Allergen.belongsToMany(Recipe, {
     foreignKey: 'allergenId' 
 });
 
-module.exports = { User, Recipe, Favorite, Like, Allergen, RecipeAllergen };
+Recipe.hasMany(Ingredient, { 
+    foreignKey: 'recipeId',
+    as: 'ingredients',
+    onDelete: 'CASCADE'
+});
+Ingredient.belongsTo(Recipe, { 
+    foreignKey: 'recipeId'
+});
+
+module.exports = { User, Recipe, Favorite, Like, Allergen, RecipeAllergen, Ingredient };
