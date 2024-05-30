@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+const sequelize = require('../config/connection');
 
 class Allergen extends Model {}
 
@@ -17,8 +17,8 @@ Allergen.init({
 }, 
 { 
     sequelize, 
-    modelName: 'Allergen' 
-
+    modelName: 'Allergen',
+    tableName: 'Allergens'
 });
 
 module.exports = Allergen;

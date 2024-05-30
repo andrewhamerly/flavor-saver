@@ -5,7 +5,8 @@ class Like extends Model {}
 
 Like.init({}, { 
     sequelize, 
-    modelName: 'Like' 
+    modelName: 'Like',
+    tableName: 'Likes'
 });
 
 module.exports = Like;
