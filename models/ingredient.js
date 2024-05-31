@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Ingredient extends Model {}
@@ -30,7 +30,9 @@ Ingredient.init({
     },
     onDelete: 'CASCADE'
   }
-}, {
+}, 
+{
+  sequelize,
   tableName: 'ingredients',
   timestamps: true
 });
