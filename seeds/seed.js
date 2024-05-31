@@ -15,17 +15,16 @@ const seedDatabase = async () => {
 
     for (const recipe of recipeData) {
       await Recipe.create({
-        recipe,
+        ...recipe,
         user_id: users[Math.floor(Math.random() * users.length)].id,
       });
     }
 
     console.log('Database seeded successfully!');
-    process.exit(0);
+    process.exit(0); // Exit the process after seeding
   } catch (error) {
-    console.log(error);
     console.error('Failed to seed database:', error);
-    process.exit(1);
+    process.exit(1); // Exit with an error code if something goes wrong
   }
 };
 
