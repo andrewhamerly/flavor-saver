@@ -15,7 +15,7 @@ const seedDatabase = async () => {
 
     for (const recipe of recipeData) {
       await Recipe.create({
-        ...recipe,
+        recipe,
         user_id: users[Math.floor(Math.random() * users.length)].id,
       });
     }
