@@ -1,49 +1,48 @@
 [
   {
+    "id": 1,
     "title": "Meatball Bake",
     "description": "Three meatballs baked in marinara with mozzarella on top and a scoop of ricotta on the side.",
-    "ingredients":
-      "1 lb Ground Beef 1/2 cup Bread Crumbs 1/4 cup Parmesan Cheese 1 Egg 2 cups Marinara Sauce 1 1/2 cups Mozzarella Cheese 1/2 cup Ricotta Cheese",
     "instructions": "1. Preheat oven to 375°F. Mix ground beef, bread crumbs, Parmesan, and egg. Form meatballs. Brown in a skillet.\n2. Place meatballs in a baking dish with marinara sauce. Top with mozzarella.\n3. Bake for 20-25 minutes. Serve with a scoop of ricotta.",
     "imageUrl": "images/meatball-bake.png",
     "allergens": "dairy, gluten"
   },
   {
+    "id": 2,
     "title": "Southern Fried Chicken",
     "description": "Crispy, golden-brown fried chicken with a savory and spicy coating.",
-    "ingredients": "Steak",
     "instructions": "1. Marinate chicken in buttermilk for 4 hours.\n2. Mix flour, paprika, salt, and pepper. Dredge chicken.\n3. Fry in oil at 350°F for 10-12 minutes per side.",
     "imageUrl": "images/southern-fried-chicken.png",
     "allergens": "dairy, gluten"
   },
   {
+    "id": 3,
     "title": "Texas BBQ Brisket",
     "description": "Slow-smoked beef brisket with a flavorful dry rub, served with BBQ sauce.",
-    "ingredients": "Steak",
     "instructions": "1. Rub brisket with spices. Let sit for 1 hour.\n2. Smoke at 225°F until internal temp is 195°F.\n3. Let rest 30 minutes before slicing. Serve with BBQ sauce.",
     "imageUrl": "images/texas-bbq-brisket.png",
     "allergens": "none"
   },
   {
+    "id": 4,
     "title": "New England Clam Chowder",
     "description": "A creamy soup filled with tender clams, potatoes, and onions.",
-    "ingredients": "Steak",
     "instructions": "1. Cook bacon, then sauté onion.\n2. Add potatoes and flour. Cook 2 minutes.\n3. Add clams and cream. Simmer until clams open.",
     "imageUrl": "images/new-england-clam-chowder.png",
     "allergens": "dairy, shellfish, gluten"
   },
   {
+    "id": 5,
     "title": "California Fish Tacos",
     "description": "Grilled fish tacos with fresh avocado, cabbage slaw, and lime crema.",
-    "ingredients": "Steak",
     "instructions": "1. Season fish with chili powder. Grill 3-4 minutes per side.\n2. Mix sour cream and lime juice. Assemble tacos with fish, avocado, cabbage, and crema.",
     "imageUrl": "images/california-fish-tacos.png",
     "allergens": "fish, dairy"
   },
   {
+    "id": 6,
     "title": "Chicago Deep Dish Pizza",
     "description": "Thick, buttery crust filled with layers of cheese, sausage, and rich tomato sauce.",
-    "ingredients": "Steak",
     "instructions": "1. Mix flour, cornmeal, salt, water, and butter. Let rise 1 hour.\n2. Press dough into pan. Layer mozzarella, sausage, and tomatoes.\n3. Bake at 425°F for 25-30 minutes.",
     "imageUrl": "images/chicago-deep-dish-pizza.png",
     "allergens": "dairy, gluten"

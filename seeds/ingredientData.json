@@ -1,0 +1,268 @@
+[
+  {
+    "id": 1,
+    "name": "Ground Beef",
+    "unit": "lb",
+    "quantity": "1",
+    "recipeId": 1
+  },
+  {
+    "id": 2,
+    "name": "Bread Crumbs",
+    "unit": "cup",
+    "quantity": "1/2",
+    "recipeId": 1
+  },
+  {
+    "id": 3,
+    "name": "Parmesan Cheese",
+    "unit": "cup",
+    "quantity": "1/4",
+    "recipeId": 1
+  },
+  {
+    "id": 4,
+    "name": "Egg",
+    "unit": "whole",
+    "quantity": "1",
+    "recipeId": 1
+  },
+  {
+    "id": 5,
+    "name": "Marinara Sauce",
+    "unit": "cups",
+    "quantity": "2",
+    "recipeId": 1
+  },
+  {
+    "id": 6,
+    "name": "Mozzarella Cheese",
+    "unit": "cups",
+    "quantity": "1 1/2",
+    "recipeId": 1
+  },
+  {
+    "id": 7,
+    "name": "Ricotta Cheese",
+    "unit": "cups",
+    "quantity": "1/2",
+    "recipeId": 1
+  },
+  {
+    "id": 8,
+    "name": "Whole Chicken, cut into pieces",
+    "unit": "whole",
+    "quantity": "1",
+    "recipeId": 2
+  },
+  {
+    "id": 9,
+    "name": "Buttermilk",
+    "unit": "cups",
+    "quantity": "2",
+    "recipeId": 2
+  },
+  {
+    "id": 10,
+    "name": "Flour",
+    "unit": "cups",
+    "quantity": "2",
+    "recipeId": 2
+  },
+  {
+    "id": 11,
+    "name": "Paprika",
+    "unit": "tbsp",
+    "quantity": "1",
+    "recipeId": 2
+  },
+  {
+    "id": 12,
+    "name": "Salt and Pepper",
+    "unit": "tsp",
+    "quantity": "1/2",
+    "recipeId": 2
+  },
+  {
+    "id": 13,
+    "name": "Oil",
+    "unit": "tbsp",
+    "quantity": "2",
+    "recipeId": 2
+  },
+  {
+    "id": 14,
+    "name": "Beef Brisket",
+    "unit": "whole",
+    "quantity": "1",
+    "recipeId": 3
+  },
+  {
+    "id": 15,
+    "name": "Paprika",
+    "unit": "cup",
+    "quantity": "1/4",
+    "recipeId": 3
+  },
+  {
+    "id": 16,
+    "name": "Brown Sugar",
+    "unit": "tbsp",
+    "quantity": "2",
+    "recipeId": 3
+  },
+  {
+    "id": 17,
+    "name": "Salt",
+    "unit": "tbsp",
+    "quantity": "1",
+    "recipeId": 3
+  },
+  {
+    "id": 18,
+    "name": "BBQ Sauce",
+    "unit": "cup",
+    "quantity": "1",
+    "recipeId": 3
+  },
+  {
+    "id": 19,
+    "name": "Clams",
+    "unit": "dozen",
+    "quantity": "2",
+    "recipeId": 4
+  },
+  {
+    "id": 20,
+    "name": "Bacon",
+    "unit": "slices",
+    "quantity": "2",
+    "recipeId": 4
+  },
+  {
+    "id": 21,
+    "name": "Onion",
+    "unit": "whole",
+    "quantity": "1",
+    "recipeId": 4
+  },
+  {
+    "id": 22,
+    "name": "Potatoes",
+    "unit": "cups",
+    "quantity": "3",
+    "recipeId": 4
+  },
+  {
+    "id": 23,
+    "name": "Heavy Cream",
+    "unit": "cups",
+    "quantity": "2",
+    "recipeId": 4
+  },
+  {
+    "id": 24,
+    "name": "Flour",
+    "unit": "tbsp",
+    "quantity": "2",
+    "recipeId": 4
+  },
+  {
+    "id": 25,
+    "name": "White Fish",
+    "unit": "lb",
+    "quantity": "1",
+    "recipeId": 5
+  },
+  {
+    "id": 26,
+    "name": "Tortillas",
+    "unit": "whole",
+    "quantity": "8",
+    "recipeId": 5
+  },
+  {
+    "id": 27,
+    "name": "Avacado",
+    "unit": "whole",
+    "quantity": "1",
+    "recipeId": 5
+  },
+  {
+    "id": 28,
+    "name": "Shredded Lettuce",
+    "unit": "cups",
+    "quantity": "2",
+    "recipeId": 5
+  },
+  {
+    "id": 29,
+    "name": "Sour Cream",
+    "unit": "cup",
+    "quantity": "1/2",
+    "recipeId": 5
+  },
+  {
+    "id": 30,
+    "name": "Lime",
+    "unit": "whole",
+    "quantity": "1",
+    "recipeId": 5
+  },
+  {
+    "id": 31,
+    "name": "Flour",
+    "unit": "cups",
+    "quantity": "3",
+    "recipeId": 6
+  },
+  {
+    "id": 32,
+    "name": "Cornmeal",
+    "unit": "cup",
+    "quantity": "1/2",
+    "recipeId": 6
+  },
+  {
+    "id": 33,
+    "name": "Salt",
+    "unit": "tsp",
+    "quantity": "1 1/4",
+    "recipeId": 6
+  },
+  {
+    "id": 34,
+    "name": "Warm Water",
+    "unit": "cups",
+    "quantity": "1 1/4",
+    "recipeId": 6
+  },
+  {
+    "id": 35,
+    "name": "Butter",
+    "unit": "cup",
+    "quantity": "1/2",
+    "recipeId": 6
+  },
+  {
+    "id": 36,
+    "name": "Sausage",
+    "unit": "lb",
+    "quantity": "1",
+    "recipeId": 6
+  },
+  {
+    "id": 37,
+    "name": "Mozzarella Cheese",
+    "unit": "cups",
+    "quantity": "3",
+    "recipeId": 6
+  },
+  {
+    "id": 38,
+    "name": "Crushed Totatoes",
+    "unit": "cups",
+    "quantity": "2",
+    "recipeId": 6
+  }
+]
