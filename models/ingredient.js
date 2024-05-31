@@ -18,6 +18,10 @@ Ingredient.init({
     type: DataTypes.STRING,
     allowNull: false,
   },
+  unit: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   recipeId: {
     type: DataTypes.INTEGER,
     references: {
