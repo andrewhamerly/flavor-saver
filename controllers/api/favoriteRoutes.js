@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { User, Recipe, Favorite } = require('../models');
-const withAuth = require('../utils/auth');
+const { User, Recipe, Favorite } = require('../../models');
+const withAuth = require('../../utils/auth');
 
-router.get('/favorites', withAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const userId = req.session.user_id;
 

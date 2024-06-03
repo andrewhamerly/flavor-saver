@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>User Profile</title>
-</head>
-
 <main class="container mx-auto px-4 py-6">
     <!-- User Information Section -->
     <section class="bg-white shadow rounded-lg p-6 mb-6">
       <div class="flex items-center space-x-4">
+        <!-- TO DO: May Have To Push Back Profile Picture Feature -->
         <img src="{{user.profileImageUrl}}" alt="{{user.username}}'s profile picture" class="w-16 h-16 rounded-full">
         <div>
           <h2 class="text-xl font-semibold text-gray-900">{{user.username}}</h2>
@@ -24,7 +11,7 @@
       </div>
     </section>
 
-    <!-- Recipe List Section -->
+    <!-- User Recipe List Section -->
     <section>
       <h2 class="text-2xl font-semibold text-gray-900 mb-4">Recipes</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -40,7 +27,8 @@
       </div>
     </section>
 
-    <section>
+    <!-- TO DO: Favorite or Liked List Section  TO DO: Refactor from HTML to Handlebars.js style file. -->
+<section>
     <div class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-24 max-w-7xl">
         <div class="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3">
             <div class="p-6">
