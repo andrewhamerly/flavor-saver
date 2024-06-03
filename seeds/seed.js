@@ -3,6 +3,7 @@ const { User, Recipe } = require('../models');
 
 const userData = require('./userData.json');
 const recipeData = require('./recipeData.json');
+const ingredientData = require('./ingredientData.json');
 
 const seedDatabase = async () => {
   try {
@@ -17,6 +18,17 @@ const seedDatabase = async () => {
       await Recipe.create({
         ...recipe,
         user_id: users[Math.floor(Math.random() * users.length)].id,
+      });
+    }
+
+    const recipeIngredients = ingredientData.filter(
+      (ingredient) => ingredient.recipe_id === recipe.id
+    );
+
+    for (const ingredient of recipeIngredients) {
+      await Ingredient.create({
+        ...ingredient,
+        recipe_id: createdRecipe.id,
       });
     }
 
