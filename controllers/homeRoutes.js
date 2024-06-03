@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
     const recipes = RecipeData.map((recipe) => recipe.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
+    res.render('views/homepage', { 
       recipes, 
       logged_in: req.session.logged_in 
     });
@@ -40,7 +40,11 @@ router.get('/recipe/:id', async (req, res) => {
 
     const recipe = recipeData.get({ plain: true });
 
+<<<<<<< HEAD
     res.render('recipes/recipeDetails', {
+=======
+    res.render('views/recipes/recipeDetails', {
+>>>>>>> main
       recipe,
       logged_in: req.session.logged_in
     });
@@ -60,7 +64,11 @@ router.get('/profile', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
+<<<<<<< HEAD
     res.render('users/profile', {
+=======
+    res.render('views/users/profile', {
+>>>>>>> main
       user,
       logged_in: true
     });
@@ -72,11 +80,15 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
+<<<<<<< HEAD
     res.redirect('users/profile');
+=======
+    res.redirect('views/users/profile');
+>>>>>>> main
     return;
   }
 
-  res.render('login');
+  res.render('/users/login');
 });
 
 module.exports = router;

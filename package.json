@@ -4,7 +4,11 @@
   "description": "As a food enthusiast, I want to use the Flavor Saver app to discover new recipes, save my favorite recipes for future reference, and share my own recipes with others.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/seed.js",
+    "build-css":"tailwindcss build src/style.css -o public/style.css",
+    "watch":"tailwindcss build src/style.css -o public/style.css --watch"
   },
   "author": "Chris Lose, Timothy Watson, Avery Gallagan, Andrew Hamerly",
   "license": "MIT",
@@ -14,6 +18,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
+    "handlebars": "^4.7.6",
     "express-session": "^1.17.1",
     "pg": "^8.11.3",
     "sequelize": "^6.3.5"
