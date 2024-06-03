@@ -35,4 +35,21 @@ router.post('/favorite', withAuth, async (req, res) => {
   }
 });
 
+router.delete('/favorite', withAuth, async (req, res) => {
+  try {
+    const { recipeId } = req.body;
+    const userId = req.session.user_id;
+
+    const favorite = await Favorite.findOne({ where: { userId, recipeId } });
+    if (!favorite) {
+      return res.status(404).json({ message: 'Favorite not found' });
+    }
+
+    await favorite.destroy();
+    res.status(200).json({ message: 'Favorite removed!' });
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
 module.exports = router;

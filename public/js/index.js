@@ -116,4 +116,29 @@ const loadUserProfile = async () => {
         alert('Failed to load user profile.');
     }
     };
+
+
+//function to remove item from a users favorites list
+
+    // const removeFavoriteHandler = async (event) => {
+    //     if (event.target.matches('.remove-favorite')) {
+    //       const recipeId = event.target.getAttribute('data-recipe-id');
+      
+    //       const response = await fetch('/api/favorites/favorite', {
+    //         method: 'DELETE',
+    //         headers: {
+    //           'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify({ recipeId }),
+    //       });
+      
+    //       if (response.ok) {
+    //         document.location.reload(); // Reload the page to update the list of favorites
+    //       } else {
+    //         alert('Failed to remove favorite.');
+    //       }
+    //     }
+    //   };
+      
+    //   document.addEventListener('click', removeFavoriteHandler);
     
