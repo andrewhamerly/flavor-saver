@@ -66,7 +66,12 @@ router.post('/login', async (req, res) => {
           res.status(404).json({ message: 'No user found with this id!'});
           return;
         }
-        res.status(200).json(userData);
+        const user = userData.get({ plain: true });
+
+        res.render('/users/profile', {
+          user, 
+          logged_in: req.session.logged_in 
+        });
     } catch (err) {
       console.error(err);
       res.status(400).json(err);
