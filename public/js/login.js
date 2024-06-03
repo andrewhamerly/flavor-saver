@@ -14,10 +14,24 @@ const loginFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/');
       } else {
-        alert('Failed to log in.');
-      }
+        showAlert('Failed to log in. Please check your email and password and try again.');
     }
-  };
+} else {
+    showAlert('Please enter both email and password.');
+}
+};
+
+const showAlert = (message) => {
+  const alertContainer = document.querySelector('#alert-container');
+  const alert = document.createElement('div');
+  alert.className = 'alert alert-danger';
+  alert.textContent = message;
+  alertContainer.appendChild(alert);
+
+  setTimeout(() => {
+      alert.remove();
+  }, 5000);
+};
   
 
 
