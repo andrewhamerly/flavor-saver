@@ -7,13 +7,11 @@ const RecipeAllergen = require('./recipeAllergen');
 const Ingredient = require('./ingredient');
 
 User.hasMany(Recipe, { 
-    foreignKey: 'userId', 
-    as: 'recipes'
+    foreignKey: 'userId',
 });
 
 Recipe.belongsTo(User, { 
-    foreignKey: 'userId', 
-    as: 'author'
+    foreignKey: 'userId',
 });
 
 User.hasMany(Favorite, {
@@ -57,7 +55,6 @@ Allergen.belongsToMany(Recipe, {
 
 Recipe.hasMany(Ingredient, { 
     foreignKey: 'recipeId',
-    as: 'ingredients',
     onDelete: 'CASCADE'
 });
 Ingredient.belongsTo(Recipe, { 
