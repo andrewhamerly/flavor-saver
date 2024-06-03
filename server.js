@@ -32,6 +32,8 @@ const sess = {
 app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
+hbs.registerPartials(path.join(__dirname, 'views/partials'))
+app.set('views', path.join(__dirnam, 'views'), (err) => {});
 app.set('view engine', 'handlebars');
 
 app.use(express.json());

@@ -32,7 +32,7 @@ router.post('/', withAuth, async (req, res) => {
       const recipeData = await Recipe.create({
         title: req.body.title,
         description: req.body.description,
-        ingredients: req.body.ingredients,
+        ingredients: req.body.ingredients, // !!! Ingredients may have been taken out and made into a seperate table, pleaase double check, then delete this comment. !!!
         instructions: req.body.instructions,
         imageUrl: req.body.imageUrl,
         allergens: req.body.allergens,
