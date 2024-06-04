@@ -17,7 +17,8 @@ Recipe.belongsTo(User, {
 User.hasMany(Favorite, {
     foreignKey: 'userId',
     onDelete: 'CASCADE'
-  });
+});
+
 Favorite.belongsTo(User, { 
     foreignKey: 'userId'
 });
@@ -25,7 +26,8 @@ Favorite.belongsTo(User, {
 Recipe.hasMany(Favorite, {
     foreignKey: 'recipeId',
     onDelete: 'CASCADE'
-  });
+});
+
 Favorite.belongsTo(Recipe, { 
     foreignKey: 'recipeId'
 });
@@ -33,6 +35,7 @@ Favorite.belongsTo(Recipe, {
 User.hasMany(Like, { 
     foreignKey: 'userId'
 });
+
 Like.belongsTo(User, { 
     foreignKey: 'userId'
 });
