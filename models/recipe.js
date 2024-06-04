@@ -36,10 +36,14 @@ Recipe.init({
       model: 'Users',
       key: 'id',
     },
-  }
-}, 
-{ 
-  sequelize, 
+  },
+  likesCount: {
+    type: DataTypes.INTEGER,
+    defaultValue: 0,
+    allowNull: false,
+  },
+}, {
+  sequelize,
   modelName: 'Recipe',
   tableName: 'Recipes'
 });
