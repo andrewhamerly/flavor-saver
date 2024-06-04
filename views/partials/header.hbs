@@ -21,15 +21,15 @@
             <nav :class="{'flex': open, 'hidden': !open}"
                 class="flex-col items-center flex-grow hidden pb-4 border-black md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2">
                 <a class="px-4 py-2 mt-2 text-m text-black md:mt-0 hover:text-blue-600 focus:outline-none focus:shadow-outline"
-                    href="/views/index.hbs">Home</a>
+                    href="/" id="homeButton">Home</a>
                 <a class="px-4 py-2 mt-2 text-m text-black md:mt-0 hover:text-blue-600 focus:outline-none focus:shadow-outline"
-                    href="/views/users/userProfile.hbs">Profile</a>
+                    href="/users/profile">Profile</a>
 
                 <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
                     <button
                         class="items-center block px-10 py-2.5 text-base font-medium text-center text-black transition duration-500 ease-in-out transform border-2 border-black hover:bg-yellow-400 shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" id="loginButton">Login</button>
                     <button
-                        class="items-center block px-10 py-2.5 text-base font-medium text-center text-black transition duration-500 ease-in-out transform border-2 border-black hover:bg-yellow-400 shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">Register</button>
+                        class="items-center block px-10 py-2.5 text-base font-medium text-center text-black transition duration-500 ease-in-out transform border-2 border-black hover:bg-yellow-400 shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" id="registerButton">Register</button>
                 </div>
             </nav>
         </div>
