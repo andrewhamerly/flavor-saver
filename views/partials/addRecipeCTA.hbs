@@ -1,38 +1,29 @@
-<section>
-  <div class="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
-      <div class="relative z-10 lg:py-16">
-        <div class="relative h-64 sm:h-80 lg:h-full">
-          <img
-            alt="California Fish Tacos"
-            src="/images/california-fish-tacos.png"
-            class="absolute inset-0 h-full w-full object-cover"
-          />
-        </div>
-      </div>
+<section class="overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2">
+  <div class="p-8 md:p-12 lg:px-16 lg:py-24">
+    <div class="mx-auto max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+      <h2 class="text-2xl font-bold text-gray-900 md:text-3xl">
+        Ready to add your special recipe?
+      </h2>
 
-      <div class="relative flex items-center bg-gray-100">
-        <span
-          class="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100"
-        ></span>
+      <p class="hidden text-gray-500 md:mt-4 md:block">
+        Whether it be your grandmother's gumbo or granddad's savory wing recipe, your family flavors deserve to be cherished. Help preserve culinary traditions.
+      </p>
 
-        <div class="p-8 sm:p-16 lg:p-24">
-          <h2 class="text-2xl font-bold sm:text-3xl">
-            Ready to add your special recipe for everyone to enjoy?
-          </h2>
-
-          <p class="mt-4 text-gray-600">
-            Whether it be your grandmothers gumbo or grandads savory wing recipe, your family flavors deserve to be cherished. Preserve culinary traditions and enjoy a rich tapestry of flavors with every dish you cook and share.
-          </p>
-
-          <a
-            href="/api/recipes/addNewRecipe"
-            id="ctaButton" class="mt-8 inline-block rounded border border-indigo-600 bg-indigo-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
-          >
-            Add Your Recipe
-          </a>
-        </div>
+      <div class="mt-4 md:mt-8">
+        <a
+          href="/api/recipes/addNewRecipe"
+          id="ctaButton"
+          class="inline-block rounded bg-emerald-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-emerald-700 focus:outline-none focus:ring focus:ring-yellow-400"
+        >
+          Add Your Recipe
+        </a>
       </div>
     </div>
   </div>
+
+  <img
+    alt="Strawberry Shortcake"
+    src="images/strawberry-shortcake.png"
+    class="h-56 w-full object-cover sm:h-full"
+  />
 </section>
