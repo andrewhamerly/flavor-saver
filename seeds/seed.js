@@ -21,7 +21,7 @@ const seedDatabase = async () => {
       });
 
       const recipeIngredients = ingredientData.filter(
-        (ingredient) => ingredient.recipe_id === recipe.id
+        (ingredient) => ingredient.recipeId === recipe.id
       );
 
       for (const ingredient of recipeIngredients) {

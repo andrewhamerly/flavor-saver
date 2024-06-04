@@ -1,25 +1,16 @@
 <div class="container mx-auto mt-8">
-    <h1 class="text-4xl font-bold mb-4">{{title}}</h1>
-    <img src="{{imageUrl}}" alt="{{title}}" class="w-full h-auto mb-4">
-    <p class="text-gray-700 mb-4">{{description}}</p>
+    <h1 class="text-4xl font-bold mb-4">{{recipe.title}}</h1>
+    <img src="{{recipe.imageUrl}}" alt="{{recipe.title}}" class="w-full h-auto mb-4">
+    <p class="text-gray-700 mb-4">{{recipe.description}}</p>
     <h2 class="text-2xl font-bold mb-2">Ingredients</h2>
     <ul class="list-disc list-inside mb-4">
-        {{#each ingredients}}
-        <li>{{this}}</li>
+        {{#each recipe.ingredients}}
+        <li>{{this.name}} - {{this.quantity}} {{this.unit}}</li>
         {{/each}}
     </ul>
-    <h2 class="text-2xl font-bold mb-2">Instructions</h2>
-    <ol class="list-decimal list-inside">
-        {{#each instructions}}
-        <li>{{this}}</li>
-        {{/each}}
-    </ol>
+    <h2 class="text-2xl font-bold mb-2">Instructions hi</h2>
+    <p class="text-gray-700 mb-4">{{recipe.instructions}}</p>
     <h2 class="text-2xl font-bold mb-2">Allergens</h2>
-    <ul class="list-disc list-inside mb-4">
-        {{#each allergens}}
-        <li>{{this}}</li>
-        {{/each}}
-    </ul>
+    <p class="text-gray-700 mb-4">{{recipe.allergens}}</p>
     <button id="favorite-btn" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded">Add to Favorites</button>
 </div>
-<script src="/js/favorite.js"></script>
