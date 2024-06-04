@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { Recipe, Ingredient } = require('../../models');
 const withAuth = require('../../utils/auth');
+const path = require('path');
 
 router.get('/', async (req, res) => {
     try {
@@ -11,6 +12,11 @@ router.get('/', async (req, res) => {
         console.error(err);
         res.status(400).json(err);
     }
+});
+
+router.get('/addNewRecipe', withAuth, (req, res) => {
+  console.log('Accessing addNewRecipe route');
+  res.render(path.join('recipes', 'addNewRecipe'));
 });
 
 router.get('/:id', async (req, res) => {
@@ -54,11 +60,6 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.get('/addNewRecipe', (req, res) => {
-  console.log('Accessing addNewRecipe route');
-  res.render('addNewRecipe');
-});
-
 router.post('/', withAuth, async (req, res) => {
     try {
       const recipeData = await Recipe.create({
@@ -70,8 +71,19 @@ router.post('/', withAuth, async (req, res) => {
         allergens: req.body.allergens,
         user_id: req.body.user_id,
       });
+
+      for (const ingredient of req.body.ingredients) {
+        await Ingredient.create({
+          name: ingredient.name,
+          quantity: ingredient.quantity,
+          unit: ingredient.unit,
+          recipeId: recipeData.id,
+        });
+      }
+
       res.status(200).json(recipeData);
     } catch (err) {
+      console.error(err);
       res.status(400).json(err);
     }
   });
