@@ -78,4 +78,11 @@ router.get('/login', (req, res) => {
   res.render('users/login');
 });
 
+router.get('/register', (req, res) => {
+  res.render('users/register');
+});
+// router.get('/home', (req, res) => {
+//   res.render('/');
+// });
+
 module.exports = router;

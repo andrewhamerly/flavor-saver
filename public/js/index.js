@@ -45,6 +45,14 @@ const loadUserProfile = async () => {
     button.addEventListener("click", function() {
         document.location.replace('/login');
     });
+    let registerButton = document.getElementById("registerButton");
+    registerButton.addEventListener("click", function() {
+        document.location.replace('/register');
+    });
+    let homeButton = document.getElementById("homeButton");
+    homeButton.addEventListener("click", function() {
+        document.location.replace('/home');
+    });
 
 //function to remove item from a users favorites list
 
