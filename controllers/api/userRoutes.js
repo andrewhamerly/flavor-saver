@@ -68,7 +68,7 @@ router.post('/login', async (req, res) => {
         }
         const user = userData.get({ plain: true });
 
-        res.render('/users/profile', {
+        res.render('profile', {
           user, 
           logged_in: req.session.logged_in 
         });

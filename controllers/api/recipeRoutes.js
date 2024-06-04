@@ -54,12 +54,17 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+router.get('/addNewRecipe', (req, res) => {
+  console.log('Accessing addNewRecipe route');
+  res.render('addNewRecipe');
+});
+
 router.post('/', withAuth, async (req, res) => {
     try {
       const recipeData = await Recipe.create({
         title: req.body.title,
         description: req.body.description,
-        ingredients: req.body.ingredients, // !!! Ingredients may have been taken out and made into a separate table, please double check, then delete this comment. !!!
+        ingredients: req.body.ingredients,
         instructions: req.body.instructions,
         imageUrl: req.body.imageUrl,
         allergens: req.body.allergens,

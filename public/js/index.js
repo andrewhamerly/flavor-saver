@@ -54,6 +54,11 @@ const loadUserProfile = async () => {
         document.location.replace('/home');
     });
 
+    let ctaButton = document.getElementById('ctaButton');
+    ctaButton.addEventListener("click", function() {
+        document.location.replace('/addNewRecipe');
+    });
+
 //function to remove item from a users favorites list
 
     // const removeFavoriteHandler = async (event) => {
