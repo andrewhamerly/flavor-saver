@@ -20,7 +20,18 @@ router.get('/:id', async (req, res) => {
             res.status(404).json({ message: 'No recipe found with this id!'});
             return;
         }
-        res.status(200).json(recipeData);
+
+        const recipe = recipeData.get({ plain: true });
+
+        res.render('recipeDetails', {
+          title: recipe.title,
+          description: recipe.description,
+          ingredients: recipe.ingredients,
+          instructions: recipe.instructions,
+          imageUrl: recipe.imageUrl,
+          allergens: recipe.allergens,
+          logged_in: req.session.logged_in,
+        });
     } catch (err) {
         console.error(err);
         res.status(400).json(err);
