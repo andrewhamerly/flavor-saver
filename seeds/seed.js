@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User, Recipe } = require('../models');
+const { User, Recipe, Ingredient, Like } = require('../models');
 
 const userData = require('./userData.json');
 const recipeData = require('./recipeData.json');
@@ -15,21 +15,21 @@ const seedDatabase = async () => {
     });
 
     for (const recipe of recipeData) {
-      await Recipe.create({
-        ...recipe,
+      const createdRecipe = await Recipe.create({
+        recipe,
         user_id: users[Math.floor(Math.random() * users.length)].id,
       });
-    }
 
-    const recipeIngredients = ingredientData.filter(
-      (ingredient) => ingredient.recipe_id === recipe.id
-    );
+      const recipeIngredients = ingredientData.filter(
+        (ingredient) => ingredient.recipe_id === recipe.id
+      );
 
-    for (const ingredient of recipeIngredients) {
-      await Ingredient.create({
-        ...ingredient,
-        recipe_id: createdRecipe.id,
-      });
+      for (const ingredient of recipeIngredients) {
+        await Ingredient.create({
+          ingredient,
+          recipe_id: createdRecipe.id,
+        });
+      }
     }
 
     console.log('Database seeded successfully!');

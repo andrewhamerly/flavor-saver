@@ -13,14 +13,14 @@ Like.init({
   userId: {
     type: DataTypes.INTEGER,
     references: {
-      model: 'User',
+      model: 'Users',
       key: 'id',
     },
   },
   recipeId: {
     type: DataTypes.INTEGER,
     references: {
-      model: 'Recipe',
+      model: 'Recipes',
       key: 'id',
     },
   },
