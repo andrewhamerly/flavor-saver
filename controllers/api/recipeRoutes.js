@@ -30,7 +30,7 @@ router.get('/:id', async (req, res) => {
           instructions: recipe.instructions,
           imageUrl: recipe.imageUrl,
           allergens: recipe.allergens,
-          logged_in: req.session.logged_in,
+          likesCount: recipe.likesCount,
         });
     } catch (err) {
         console.error(err);
