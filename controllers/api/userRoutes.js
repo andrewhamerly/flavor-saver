@@ -1,25 +1,64 @@
 const express = require('express')
 const router = express.Router();
 const {User} = require('../../models');
+const bcrypt = require('bcrypt');
 const withAuth = require('../../utils/auth')
 
+// router.post('/register', async (req, res) => {
+//     try {
+//         const userData = await User.create({
+//             username: req.body.username,
+//             email: req.body.email,
+//             password: req.body.password,
+//         });
+//         req.session.save(() => {
+//             req.session.user_id = userData.id;
+//             req.session.logged_in = true;
+//         })
+//         res.status(200).json(userData);
+//     } catch (err) {
+//         console.error(err);
+//         res.status(400).json(err);
+//     }
+// });
 router.post('/register', async (req, res) => {
-    try {
-        const userData = await User.create({
-            username: req.body.username,
-            email: req.body.email,
-            password: req.body.password,
-        });
-        req.session.save(() => {
-            req.session.user_id = userData.id;
-            req.session.logged_in = true;
-        })
-        res.status(200).json(userData);
-    } catch (err) {
-        console.error(err);
-        res.status(400).json(err);
-    }
+  try {
+      const { username, email, password } = req.body;
+
+      // Validate input
+      if (!username || !email || !password) {
+          return res.status(400).json({ error: 'All fields are required' });
+      }
+
+      // Check if user already exists
+      const existingUser = await User.findOne({ where: { email } });
+      if (existingUser) {
+          return res.status(400).json({ error: 'User already exists' });
+      }
+
+      // Hash the password
+      const hashedPassword = await bcrypt.hash(password, 10);
+
+      // Create new user
+      const userData = await User.create({
+          username,
+          email,
+          password: hashedPassword,
+      });
+
+      // Save session and log in user
+      req.session.save(() => {
+          req.session.user_id = userData.id;
+          req.session.logged_in = true;
+          res.status(200).json(userData);
+      });
+  } catch (err) {
+      console.error('Error registering user:', err);
+      res.status(500).json({ error: 'Internal server error' });
+  }
 });
+
+
 
 router.post('/login', async (req, res) => {
     try {
