@@ -35,116 +35,36 @@
                     the week!</p>
             </div>
             <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
+                {{#each recipes}}
                 <div class="items-center bg-gray-100 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
+                    <a href="/api/recipes/{{id}}">
                         <img class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
-                            src="/images/chicago-deep-dish-pizza.png" alt="deep-dish">
+                            src="{{imageUrl}}" alt="{{title}}">
                     </a>
                     <div class="p-5">
                         <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            <a href="#">Chicago Deep Dish Pizza</a>
+                            <a href="/api/recipes/{{id}}">{{title}}</a>
                         </h3>
-                        <span class="text-gray-500 dark:text-gray-400">Cook Time:</span>
-                        <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Recipe</p>
+                        <span class="text-gray-500 dark:text-gray-400">{{description}}</span>
+                        <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Liked by {{likesCount}} users</p>
                         <ul class="flex space-x-4 sm:mt-0">
                             <li>
-                                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white"><i class="fa-solid fa-thumbs-up"></i>
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    </svg>
+                                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                                    <i class="fa-solid fa-thumbs-up"></i>
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"></svg>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white"><i class="fa-solid fa-heart"></i>
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    </svg>
+                                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"></svg>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="items-center bg-gray-100 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="/images/meatball-bake.png"
-                            alt="meatballs">
-                    </a>
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            <a href="#">Meatball Bake</a>
-                        </h3>
-                        <span class="text-gray-500 dark:text-gray-400">Cook Time:</span>
-                        <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Recipe</p>
-                        <ul class="flex space-x-4 sm:mt-0">
-                            <li>
-                                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white"><i class="fa-solid fa-thumbs-up"></i>
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white"><i class="fa-solid fa-heart"></i>
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="items-center bg-gray-100 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
-                            src="images/california-fish-tacos.png" alt="fish-tacos">
-                    </a>
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            <a href="#">California Fish Tacos</a>
-                        </h3>
-                        <span class="text-gray-500 dark:text-gray-400">Cook Time:</span>
-                        <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Recipe</p>
-                        <ul class="flex space-x-4 sm:mt-0">
-                            <li>
-                                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white"><i class="fa-solid fa-thumbs-up"></i>
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white"><i class="fa-solid fa-heart"></i>
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="items-center bg-gray-100 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
-                            src="/images/southern-fried-chicken.png" alt="chicken">
-                    </a>
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            <a href="#">Southern Fried Chicken</a>
-                        </h3>
-                        <span class="text-gray-500 dark:text-gray-400">Cook Time:</span>
-                        <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Recipe</p>
-                        <ul class="flex space-x-4 sm:mt-0">
-                            <li>
-                                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white"><i class="fa-solid fa-thumbs-up"></i>
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white"><i class="fa-solid fa-heart"></i>
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                {{/each}}
+                            
             </div>
         </div>
     </section>
