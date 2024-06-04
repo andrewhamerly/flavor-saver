@@ -3,12 +3,18 @@ const addRecipeFormHandler = async (event) => {
   
     const title = document.querySelector('#recipe-title').value.trim();
     const description = document.querySelector('#recipe-description').value.trim();
-    const ingredients = document.querySelector('#recipe-ingredients').value.trim();
     const instructions = document.querySelector('#recipe-instructions').value.trim();
     const imageUrl = document.querySelector('#recipe-image-url').value.trim();
     const allergens = document.querySelector('#recipe-allergens').value.trim();
+    const ingredientsInput = document.querySelector('#ingredients').value.trim();
+
+    const ingredients = ingredientsInput.split(',').map(segment => {
+      const [quantity, unit, ...nameParts] = segment.trim().split(' ');
+      const name = nameParts.join(' ');
+      return { quantity, unit, name };
+  });
   
-    if (title && description && ingredients && instructions && imageUrl && allergens) {
+    if (title && description && instructions && imageUrl && allergens &&  ingredients.every(ingredient => ingredient.quantity && ingredient.unit && ingredient.name)) {
       const response = await fetch('/api/recipes', {
         method: 'POST',
         body: JSON.stringify({ title, description, ingredients, instructions, imageUrl, allergens }),
@@ -16,7 +22,7 @@ const addRecipeFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/'); // Redirect to homepage or recipes page
+        document.location.replace('/');
       } else {
         alert('Failed to add recipe.');
       }
