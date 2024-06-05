@@ -58,7 +58,7 @@ Coming Soon - Website: [www.flavorsaverapp.com](http://www.flavorsaverapp.com)
 
 ## Installation (Needs Review)
 
-Steps to kickstart the project:<br />1. **Copy Link**: Hit the "Code" button in this GitHub repo to copy the link.<br />2. **Clone**: In GitBash, execute the command `git clone [paste link here]`.<br />3. **NPM**: Install Node Package Manager with `npm init -y`.<br />4. **Inquirer**: Get npm's inquirer package by running `npm install inquirer`.<br />5. **PG**: Get npm's pg package by running `npm install pg`.<br />6. **PostgreSQL**: Setup PostgreSQL database by running `psql -U postgres` followed by entering your user database password and then creating the database by running `\i db/schema.sql`.<br />7. **Seeding**: Optionally, you can seed the database with info by running `\i db/seeds.sql`.
+Steps to kickstart the project:<br />1. **Copy Link**: Hit the "Code" button in this GitHub repo to copy the link.<br />2. **Clone**: In GitBash, execute the command `git clone [paste link here]`.<br />3. **NPM**: Install Node Package Manager with `npm init -y`.<br />4. **Download npm package dependencies**: Get npm's packages by running `npm install`.<br />5. **PostgreSQL**: Setup PostgreSQL database by running `psql -U postgres` followed by entering your user database password and then creating the database by running `\i db/schema.sql`.<br />6. **Seeding**: Optionally, you can seed the database with info by running `npm run seed`.<br />7. **Run Server**: Now that your server has the seeded data and packages installed run `npm start`.<br />8. **Click on LocalHost URL Link**: Enjoy the Flavor Saver app.
 
 ## Usage
 
