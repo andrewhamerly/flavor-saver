@@ -4,6 +4,24 @@ const {User} = require('../../models');
 const bcrypt = require('bcrypt');
 const withAuth = require('../../utils/auth')
 
+router.get('/api/user/:id', async (req, res) => {
+  try {
+    const user = await User.findByPk(req.params.id, {
+      include: [Recipe]
+    });
+    if (user) {
+      const userData = user.get({ plain: true });
+      userData.profileImageUrl = userData.profileImageUrl || '/images/user-profile-placeholder.png';
+      res.json(userData);
+    } else {
+      res.status(404).json({ message: 'User not found' });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to fetch user' });
+  }
+});
+
 router.post('/register', async (req, res) => {
   try {
     const { username, email, password } = req.body;
