@@ -5,13 +5,21 @@ const withAuth = require('../../utils/auth');
 const path = require('path');
 
 router.get('/', async (req, res) => {
-    try {
-        const recipeData = await Recipe.findAll();
-        res.status(200).json(recipeData);
-    } catch (err) {
-        console.error(err);
-        res.status(400).json(err);
-    }
+  const { user_id } = req.query;
+  if (!user_id) {
+    return res.status(400).json({ error: 'User ID is required' });
+  }
+
+  try {
+    const recipes = await Recipe.findAll({
+      where: { users_id: user_id },
+      include: [User]
+    });
+    res.json(recipes);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to fetch recipes' });
+  }
 });
 
 router.get('/addNewRecipe', withAuth, (req, res) => {
@@ -85,6 +93,41 @@ router.post('/', withAuth, async (req, res) => {
     } catch (err) {
       console.error(err);
       res.status(400).json(err);
+    }
+  });
+
+  router.post('/addNewRecipe', async (req, res) => {
+    try {
+      const { title, description, instructions, imageUrl, allergens, users_id, ingredients } = req.body;
+  
+      if (!title || !description || !instructions || !ingredients || !Array.isArray(ingredients) || ingredients.length === 0) {
+        return res.status(400).json({ error: 'All fields are required, and ingredients must be provided' });
+      }
+  
+      const newRecipe = await Recipe.create({
+        title,
+        description,
+        instructions,
+        imageUrl,
+        allergens,
+        users_id
+      });
+  
+      const ingredientPromises = ingredients.map(ingredient => {
+        return Ingredient.create({
+          name: ingredient.name,
+          quantity: ingredient.quantity,
+          unit: ingredient.unit,
+          recipeId: newRecipe.id
+        });
+      });
+  
+      await Promise.all(ingredientPromises);
+  
+      res.status(201).json(newRecipe);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Failed to create recipe' });
     }
   });
 

@@ -1,5 +1,4 @@
 <main class="container mx-auto px-4 py-6">
-  <!-- Profile Section -->
   <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
     <div class="flex items-center space-x-6">
       <img src="/images/user-profile-placeholder.png" alt="{{user.username}}'s profile picture" class="w-20 h-20 rounded-full shadow-md">
@@ -13,7 +12,7 @@
   <section>
     <h2 class="text-3xl font-bold text-gray-900 mb-6">Recipes</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {{#each user.Recipes}}
+      {{#each recipes}}
         <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
           <img src="{{this.imageUrl}}" alt="{{this.title}}" class="w-full h-40 object-cover">
           <div class="p-4">
@@ -27,3 +26,21 @@
 
   {{> addRecipeCTA}}
 </main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    const userId = "{{user.id}}";
+    try {
+      const response = await fetch(`/api/user/${userId}`);
+      const userData = await response.json();
+      const user = {
+        ...userData,
+        profileImageUrl: userData.profileImageUrl
+      };
+      const template = Handlebars.compile(document.querySelector('main').innerHTML);
+      document.querySelector('main').innerHTML = template({ user, recipes: user.Recipes });
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    }
+  });
+</script>
