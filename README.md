@@ -23,7 +23,8 @@ Welcome to **Flavor Saver**, your go-to recipe database app designed to help you
 
 **Flavor Saver** is a web application where users can create, store, and manage their favorite recipes. Users can also browse recipes created by others, save them to their favorites, and even like recipes they find appealing. The application ensures that users with dietary restrictions can filter recipes based on allergens.
 
-Website: [www.flavorsaverapp.com](http://www.flavorsaverapp.com)
+Deployed Application: [flavor-saver.onrender.com/](flavor-saver.onrender.com/)
+Coming Soon - Website: [www.flavorsaverapp.com](http://www.flavorsaverapp.com)
 
 ## Features
 
@@ -37,23 +38,23 @@ Website: [www.flavorsaverapp.com](http://www.flavorsaverapp.com)
   - Upload and display recipe images
   - Include detailed instructions and descriptions
 
-- Allergens Management
+- Allergens Management - Coming Soon
   - Tag recipes with allergens
   - Filter recipes by allergens
 
-- User Interactions
+- User Interactions - Coming Soon
   - Like and favorite recipes
   - View most liked and most favorited recipes
 
-## Technologies Used (Needs Review)
+## Technologies Used
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-blue) ![Node.js](https://img.shields.io/badge/Node.js-blue) ![Express.js](https://img.shields.io/badge/Express.js-blue) ![MySQL](https://img.shields.io/badge/MySQL-blue) ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-- **Backend**: Node.js, Express, Sequelize, PostgreSQL
-- **Frontend**: HTML, CSS, JavaScript
-- **Authentication**: bcrypt
+- **Backend**: Node.js, Express, Handlebars.js, Sequelize, PostgreSQL
+- **Frontend**: HTML, Tailwind CSS, JavaScript, Fetch API
+- **Authentication**: bcrypt, dotenv
 - **Hosting**: Render
-- **Others**: 
+- **Others**: Git, GitHub, Insomnia
 
 ## Installation (Needs Review)
 
@@ -65,7 +66,7 @@ Once the server is running, you can access the application at `http://localhost:
 
 - **Sign up or log in** to create a new account.
 - **Create new recipes** by filling in the title, description, ingredients, instructions, and uploading an image.
-- **Browse recipes** and use the search functionality to find recipes based on keywords or allergens.
+- **Browse recipes** and use the filter functionality to find recipes based on keywords or allergens.
 - **Save recipes** to your favorites and **like recipes** to show appreciation.
 
 ## API Endpoints
@@ -83,23 +84,23 @@ Here are some of the primary API endpoints available:
 - `PUT /recipes/:id` - Update a recipe
 - `DELETE /recipes/:id` - Delete a recipe
 
-### Ingredients
+### Ingredients - Coming Soon
 - `GET /recipes/:recipeId/ingredients` - Get all ingredients for a recipe
 - `POST /recipes/:recipeId/ingredients` - Add an ingredient to a recipe
 - `PUT /ingredients/:id` - Update an ingredient
 - `DELETE /ingredients/:id` - Delete an ingredient
 
-### Allergens
+### Allergens - Coming Soon
 - `GET /allergens` - Get all allergens
 - `POST /allergens` - Create a new allergen
 - `PUT /allergens/:id` - Update an allergen
 - `DELETE /allergens/:id` - Delete an allergen
 
-### Favorites
+### Favorites - Coming Soon
 - `POST /favorites` - Add a recipe to favorites
 - `DELETE /favorites/:id` - Remove a recipe from favorites
 
-### Likes
+### Likes - Coming Soon
 - `POST /likes` - Like a recipe
 - `DELETE /likes/:id` - Unlike a recipe
 
@@ -183,6 +184,10 @@ We welcome contributions to **Flavor Saver**! To contribute:
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Credits
+
+This app was made by the contributions of Chris Lose, Tim Watson, Avery Gallagan, and Andrew Hamerly.
 
 ## Contact
 
