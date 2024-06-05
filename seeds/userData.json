@@ -1,23 +1,5 @@
 [
     {
-      "id": 1,
-      "username": "Tim",
-      "email": "tim@gmail.com",
-      "password": "password12345"
-    },
-    {
-      "id": 2,
-      "username": "Avery",
-      "email": "avery@gmail.com",
-      "password": "password12345"
-    },
-    {
-      "id": 3,
-      "username": "Chris",
-      "email": "chris@gmail.com",
-      "password": "password12345"
-    },
-    {
       "id": 4,
       "username": "Andrew",
       "email": "andrew@gmail.com",
