@@ -11,5 +11,10 @@ const logout = async () => {
     }
   };
   
-  document.querySelector('#logout').addEventListener('click', logout);
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('#logout').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      logout();
+    });
+  });
   

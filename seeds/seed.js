@@ -14,6 +14,8 @@ const seedDatabase = async () => {
       returning: true,
     });
 
+    const recipeIdMap = new Map();
+
     for (const recipe of recipeData) {
       const createdRecipe = await Recipe.create({
         ...recipe,
@@ -23,6 +25,8 @@ const seedDatabase = async () => {
       const recipeIngredients = ingredientData.filter(
         (ingredient) => ingredient.recipeId === recipe.id
       );
+
+      recipeIdMap.set(recipe.id, createdRecipe.id);
 
       for (const ingredient of recipeIngredients) {
         await Ingredient.create({
